@@ -28,7 +28,6 @@ function onPlayerCommand(player, cmd, text)
                     {
                         weplist += GetWeaponName(weapons[i][0]) + " " + weapons[i][1] + "$ ";
                     }
-                    MessagePlayer(COLOR_RED + "Correct usage: /buywep <weapon>", player);
                     Announce("", player, 0); // To clear "Welcome to Ammu Nation" announcement comes when entering ammu nation checkpoint
                     Announce("~g~Weapons:" + weplist, player, 1);
                 }

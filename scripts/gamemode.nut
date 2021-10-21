@@ -13,7 +13,6 @@ function onScriptLoad()
     dofile("scripts/bans.nut");
     dofile("scripts/commands.nut");
     dofile("scripts/functions.nut");
-    dofile("scripts/gamemode.nut");
     dofile("scripts/limit.nut");
     dofile("scripts/player.nut");
     dofile("scripts/teleports.nut");
@@ -273,7 +272,6 @@ function onPlayerActionChange(player, oldAction, newAction) {
 
 function onPlayerRequestClass( player, classId, team, skin )
 {
-    PlaySound( player.UniqueWorld , 378 , player.Pos );
     switch(team)
     {
         case 1:
@@ -388,8 +386,8 @@ function onPlayerFPV(player, weapon)
 function onPlayerKillingSpree(player)
 {
     Announce("~o~Killing Spree!", player, 5);
-    Message(COLOR_RED+player.Name + COLOR_WHITE + " is on killing spree of " + COLOR_RED + playerData[player.ID].spree + COLOR_WHITE + " reward: " + COLOR_WHITE + playerData[player.ID].spree * 100 + "$");
-    player.IncCash(playerData[player.ID].spree * 100);
+    Message(COLOR_RED+player.Name + COLOR_WHITE + " is on killing spree of " + COLOR_RED + playerData[player.ID].spree + COLOR_WHITE + " reward: " + COLOR_GREEN + playerData[player.ID].spree * 100 + "$");
+    player.IncCash(playerData[player.ID].spree * 250);
     if(player.World == 1) player.GiveArmour(10); 
 }
 
