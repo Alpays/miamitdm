@@ -393,9 +393,9 @@ function onPlayerKillingSpree(player)
 
 function onTimeChange( lastHour, lastMinute, hour, minute )
 {
-    if(hour % 2 == 0 && minute == 0)
+    if(hour % 5 == 0 && minute == 0)
     {
-        // Auto Weather change every 2 mins, Weather Cycle: Sunny, Mostlyclear, Overcast, Rain, Thunder
+        // Auto Weather change every 5 minutes, Weather Cycle: Sunny, Mostlyclear, Overcast, Rain, Thunder
         local weather = GetWeather();
         switch(weather)
         {

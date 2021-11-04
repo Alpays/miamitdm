@@ -615,11 +615,11 @@ function onPlayerCommand(player, cmd, text)
                             playerData[player.ID].personalVehicle = CreateVehicle( vehmodel, Vector(player.Pos.x + 2, player.Pos.y, player.Pos.z), player.Angle, Random(0,90), Random(0,90) );
                             MessagePlayer(COLOR_WHITE + "Spawned vehicle: " + COLOR_GREEN + GetVehicleNameFromModel(vehmodel), player);
                         }
-                        FreeSQLQuery(q);
                     }
                     else MessagePlayer(COLOR_RED + "You can't use this command in vehicle!", player);
                 }
                 else MessagePlayer(COLOR_RED + "You have to be spawned to use this command!", player);
+                FreeSQLQuery(q);
             }
             else MessagePlayer(COLOR_RED + "You don't own a vehicle!", player);
             break;
