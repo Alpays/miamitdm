@@ -28,7 +28,7 @@ function onScriptLoad()
     banDb         <- ConnectSQL("bans.db");
     personalVehDb <- ConnectSQL("personalvehs.db"); 
 
-    QuerySQL(accountDb,     "CREATE TABLE IF NOT EXISTS accounts(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT, kills INTEGER, deaths INTEGER, topspree INTEGER, headshots INTEGER, adminlevel INTEGER, cash INTEGER, autologin BOOL, uid TEXT, uid2 TEXT, ip TEXT );");
+    QuerySQL(accountDb,     "CREATE TABLE IF NOT EXISTS accounts(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT, kills INTEGER DEFAULT 0, deaths INTEGER DEFAULT 0, topspree INTEGER DEFAULT 0, headshots INTEGER DEFAULT 0, adminlevel INTEGER DEFAULT 0, cash INTEGER DEFAULT 0, autologin BOOL, uid TEXT, uid2 TEXT, ip TEXT );");
     QuerySQL(vehiclesDb,    "CREATE TABLE IF NOT EXISTS vehicles(id INTEGER PRIMARY KEY AUTOINCREMENT, vehicleid INTEGER, x FLOAT, y FLOAT, z FLOAT, angle FLOAT, color1 INTEGER, color2 INTEGER);");
     QuerySQL(locDb,         "CREATE TABLE IF NOT EXISTS locations(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, x FLOAT, y FLOAT, z FLOAT, angle FLOAT);");
     QuerySQL(banDb,         "CREATE TABLE IF NOT EXISTS bans(id INTEGER PRIMARY KEY AUTOINCREMENT, banned TEXT, banned_ip TEXT, ban_expire INTEGER, isPerma BOOL, admin TEXT, reason TEXT, uid TEXT, uid2 TEXT);");

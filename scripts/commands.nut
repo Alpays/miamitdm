@@ -402,7 +402,7 @@ function onPlayerCommand(player, cmd, text)
                         else MessagePlayer(COLOR_RED +"You can't use this command while frozen!", player);
                     } 
                     else MessagePlayer(COLOR_RED + "You have to spawn in deathmatch world to use this command!", player);
-                    FreeSQLQuery(q); 
+                    FreeSQLQuery(q);
                 }
                 else 
                 {
