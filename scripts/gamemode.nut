@@ -401,7 +401,7 @@ function onTimeChange( lastHour, lastMinute, hour, minute )
         {
             case WEATHER_MOSTLYCLEAR: SetWeather(WEATHER_OVERCAST); break;
             case WEATHER_OVERCAST: SetWeather(WEATHER_RAIN); break;
-            case WEATHER_STORM: SetWeather(WEATHER_SUNNY);
+            case WEATHER_STORM: SetWeather(WEATHER_SUNNY); break;
             case WEATHER_SUNNY: SetWeather(WEATHER_MOSTLYCLEAR); break;
             case WEATHER_RAIN: SetWeather(WEATHER_STORM); break;
         }
