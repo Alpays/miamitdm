@@ -6,7 +6,7 @@ function TeleportPlayer(playerId, x, y, z, a)
         player.Frozen = false;
         player.Angle = a;
         player.Pos = Vector(x,y,z)
-        Message(COLOR_YELLOW + player.Name + COLOR_WHITE + " teleported to " + COLOR_YELLOW + GetLocation(player.Pos.x, player.Pos.y));
+        Message(COLOR_YELLOW + player.Name + COLOR_WHITE + " teleported to a location at " + COLOR_YELLOW + GetLocation(player.Pos.x, player.Pos.y));
     }
 }
 
@@ -126,11 +126,12 @@ function HealPlayer(playerid)
 
 function endSpawnProtection(playerid)
 {
-    local player = GetPlayer(playerid)
+    local player = GetPlayer(playerid);
     if(player)
     {
         playerData[player.ID].spawnTimer = null;
         player.World = 1;
+        player.Immunity = 0;
         MessagePlayer(COLOR_YELLOW + "Info:" + COLOR_WHITE + " spawn protection ended.", player);
     }
 }

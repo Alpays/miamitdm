@@ -118,6 +118,7 @@ function onPlayerSpawn(player)
     playerData[player.ID].spawnTimer = NewTimer( "endSpawnProtection", 3000, 1, player.ID);
     player.Disarm();
     player.SetSpawnWeps();
+    player.Immunity = 31;
     return 1;
 }
 
@@ -177,7 +178,9 @@ function onPlayerPart(player, reason)
 
 function onPlayerDeath(player, reason)
 {
+    if(playerData[player.ID].spree >= 5) Message(COLOR_GREEN + player.Name + COLOR_WHITE + " has ended their own killing spree of " + COLOR_GREEN + playerData[player.ID].spree);
     ++playerData[player.ID].deaths;
+    playerData[player.ID].spree = 0;
     switch(reason)
     {
         case 51: Message(COLOR_GREEN + player.Name + COLOR_WHITE + " exploded."); break;
