@@ -268,7 +268,7 @@ function onPlayerChat(player, msg)
 }
 
 function onPlayerActionChange(player, oldAction, newAction) {
-    if (newAction == 12 && (player.Weapon == 26 || player.Weapon == 27 || player.Weapon == 32)) {
+    if (newAction == 12) {
         onPlayerFPV(player, player.Weapon);
     }
 }
@@ -347,12 +347,6 @@ function onPlayerEnterVehicle( player, vehicle, door )
     }
 }
 
-function onPlayerExitVehicle( player, vehicle)
-{
-    vehicle.Lights = false;
-    vehicle.TaxiLight = false;
-}
-
 function onCheckpointEntered( player, cp ) {
     if(!player.Vehicle)
     {
@@ -391,7 +385,7 @@ function onPlayerKillingSpree(player)
     Announce("~o~Killing Spree!", player, 5);
     Message(COLOR_RED+player.Name + COLOR_WHITE + " is on killing spree of " + COLOR_RED + playerData[player.ID].spree + COLOR_WHITE + " reward: " + COLOR_GREEN + playerData[player.ID].spree * 100 + "$");
     player.IncCash(playerData[player.ID].spree * 250);
-    if(player.World == 1) player.GiveArmour(10); 
+    player.GiveArmour(10); 
 }
 
 function onTimeChange( lastHour, lastMinute, hour, minute )

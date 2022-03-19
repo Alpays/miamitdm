@@ -533,7 +533,7 @@ function onPlayerCommand(player, cmd, text)
                         {
                             if(targetplr.IsSpawned)
                             {
-                                MessagePlayer(COLOR_GRREN + "You've entered spectator mode.", player);
+                                MessagePlayer(COLOR_GREEN + "You've entered spectator mode.", player);
                                 MessagePlayer(COLOR_GREEN + "Press backspace to exit from spectator mode.", player);
                                 player.SpectateTarget = targetplr;
                             } else MessagePlayer(COLOR_RED + "Target player is not spawned!", player);
